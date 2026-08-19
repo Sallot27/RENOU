@@ -49,19 +49,19 @@ TIMELINE = [
 # ضع صورك داخل مجلد static/images ثم أضف اسم الملف والتعليق هنا
 # مثال: {"file": "us_at_beach.jpg", "caption": "يوم الشاطئ الجميل"}
 GALLERY = [
-     {"file": "pic(1).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(2).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(3).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(4).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(5).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(6).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(7).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(8).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(9).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(10).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(11).jpeg", "caption": "ذكرى جميلة معكِ"},
-     {"file": "pic(12).jpeg", "caption": "يوم لا يُنسى"},{"file": "pic (13).jpeg", "caption": "يوم لا يُنسى"},
-     {"file": "pic(14).jpeg", "caption": "يوم لا يُنسى"},
+     {"file": "pic (1).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (2).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (3).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (4).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (5).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (6).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (7).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (8).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (9).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (10).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (11).jpeg", "caption": "ذكرى جميلة معكِ"},
+     {"file": "pic (12).jpeg", "caption": "يوم لا يُنسى"},{"file": "pic (13).jpeg", "caption": "يوم لا يُنسى"},
+     {"file": "pic (14).jpeg", "caption": "يوم لا يُنسى"},
 ]
 
 # ✨ رسالة المفاجأة الأخيرة
