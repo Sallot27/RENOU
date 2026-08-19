@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ site_title }}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<div id="floating-hearts"></div>
+
+{% if enable_music %}
+<button id="music-toggle" aria-label="تشغيل الموسيقى" title="الموسيقى">
+  <svg viewBox="0 0 24 24" id="music-icon"><path d="M9 18V5l12-2v13" stroke-width="1.6"/><circle cx="6" cy="18" r="3" stroke-width="1.6"/><circle cx="18" cy="16" r="3" stroke-width="1.6"/></svg>
+</button>
+<audio id="bg-audio" loop preload="none">
+  <source src="{{ url_for('static', filename='audio/' + music_file) }}" type="audio/mpeg">
+</audio>
+{% endif %}
+
+<!-- الفصل الأول: البداية -->
+<section class="chapter hero" id="hero">
+  <div class="eyebrow">الفصل الأول — البداية</div>
+  <svg class="constellation-hero" viewBox="0 0 300 260" aria-hidden="true">
+    <path id="heart-path" d="M150,230 C40,150 10,90 60,50 C95,22 140,45 150,85 C160,45 205,22 240,50 C290,90 260,150 150,230 Z" />
+    <circle class="star-node" cx="150" cy="230" r="2.5"/>
+    <circle class="star-node" cx="60" cy="50" r="2.5"/>
+    <circle class="star-node" cx="150" cy="85" r="2.5"/>
+    <circle class="star-node" cx="240" cy="50" r="2.5"/>
+  </svg>
+  <h1 class="hero-title">{{ hero_title }}</h1>
+  <p class="hero-subtitle">{{ hero_subtitle }}</p>
+  {% if anniversary_date %}
+  <p class="anniversary">{{ anniversary_label }} · {{ anniversary_date }}</p>
+  {% endif %}
+  <button class="cta" id="open-heart">{{ hero_button }}</button>
+  <div class="scroll-hint">مرّري للأسفل</div>
+</section>
+
+<!-- الفصل الثاني: رسالة من القلب -->
+<section class="chapter letter" id="letter">
+  <div class="eyebrow">الفصل الثاني — {{ love_letter_title }}</div>
+  <div class="letter-card">
+    <div class="letter-seal">❤</div>
+    {% for para in love_letter_body %}
+    <p class="letter-para">{{ para }}</p>
+    {% endfor %}
+    <p class="letter-sign">— {{ my_name }}</p>
+  </div>
+
+  {% if things_i_love %}
+  <div class="loves-wrap">
+    <h3 class="loves-title">أشياء أحبها فيكِ</h3>
+    <ul class="loves-list">
+      {% for item in things_i_love %}
+      <li><span class="loves-mark">✦</span>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</section>
+
+<!-- الفصل الثالث: لحظات لا تُنسى -->
+<section class="chapter gallery" id="gallery">
+  <div class="eyebrow">الفصل الثالث — لحظات لا تُنسى</div>
+  <div class="gallery-grid">
+    {% if gallery %}
+      {% for photo in gallery %}
+      <figure class="gallery-item">
+        <img src="{{ url_for('static', filename='images/' + photo.file) }}" alt="{{ photo.caption }}" loading="lazy">
+        <figcaption>{{ photo.caption }}</figcaption>
+      </figure>
+      {% endfor %}
+    {% else %}
+      {% for i in range(4) %}
+      <div class="gallery-placeholder">
+        <span class="placeholder-star">✦</span>
+        <p>أضيفي صورتنا هنا قريبًا</p>
+      </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+<!-- الفصل الرابع: حكايتنا عبر الزمن -->
+<section class="chapter timeline" id="timeline">
+  <div class="eyebrow">الفصل الرابع — حكايتنا عبر الزمن</div>
+  <div class="timeline-line">
+    {% for event in timeline %}
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="timeline-date">{{ event.date }}</span>
+        <h4>{{ event.title }}</h4>
+        <p>{{ event.desc }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- الفصل الخامس: المفاجأة الأخيرة -->
+<section class="chapter finale" id="finale">
+  <svg class="constellation-final" viewBox="0 0 300 260" aria-hidden="true">
+    <path id="heart-path-final" d="M150,230 C40,150 10,90 60,50 C95,22 140,45 150,85 C160,45 205,22 240,50 C290,90 260,150 150,230 Z" />
+  </svg>
+  <h2 class="finale-title">{{ final_title }}</h2>
+  <p class="finale-message">{{ final_message }}</p>
+  <p class="finale-signature">{{ final_signature }}</p>
+</section>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
